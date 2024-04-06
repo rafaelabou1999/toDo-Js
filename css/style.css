@@ -158,8 +158,8 @@ h1{
     width:40vw;
     position: absolute;
     top:10%;
-    left:-0%;
-    transform: translateY(0);
+    left:0;
+    transform: translateX(-50%);
     height: 31rem;   
 }
 
@@ -200,4 +200,15 @@ input{
     
   }
   
+}
+
+@media screen and (max-height: 801px){
+    .withTasks{
+        width:40vw;
+        position: absolute;
+        top:12%;
+        left:-0%;
+        transform: translateY(0);
+        height: 31rem;   
+    }
 }
