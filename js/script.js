@@ -11,19 +11,23 @@ function createPValid(){
 
 const p = createPValid();
 function isEmpty(){    
-  if(!input.value){
+  if(!input.value.trim()){
     inputToValidate.forEach((i) => {
-        input.style.border = '1px solid red' 
-         p.textContent = "Please, enter a task"
+        input.style.border = '1px solid #AA4A44' 
+         p.innerHTML = `<div><i class="fa-solid fa-circle-exclamation"></i> Please, enter a task.</div>`
          p.style.fontSize = '.7rem';
-         p.style.color = 'red';
-         i.appendChild(p);
+         p.style.color = '#AA4A44';
+         i.appendChild(p)
+         const emptyTask = createLi();
+         emptyTask.remove();
+         
     });
   } else{
     p.remove();
     input.style.border = '1px solid #000'
   }
    
+  
 }
 
 function createLi(){
@@ -45,8 +49,9 @@ function createBtnDelete(li){
     li.style.position = 'relative'
     btn.style.position="absolute";
     btn.style.right = '5%';
-    btn.style.color = 'white';
-    btn.style.backgroundColor = '#0C0C0C';
+    btn.style.top = '7%';
+    btn.style.color = 'rgb(18, 149, 201)';
+    btn.style.backgroundColor = 'transparent';
     btn.style.border = 'none';
     btn.style.padding = '.3rem';
     
@@ -60,28 +65,30 @@ function deleteTask(li){
 btnTask.addEventListener("click", () => {
     isEmpty();
     
-
-     const listItem = createList(input.value);
-     const deleteButton = createBtnDelete(listItem); 
-
- 
-     deleteButton.addEventListener("click", () => {
-         deleteTask(listItem); 
-     });
+    if(input.value !== ''){
+        const listItem = createList(input.value);
+        const deleteButton = createBtnDelete(listItem); 
+   
+    
+        deleteButton.addEventListener("click", () => {
+            deleteTask(listItem); 
+        });
+    }
+    
 })
 
 input.addEventListener("keypress", (e) => {
   if(e.keyCode === 13){
-    if(!input.value) {
-        return isEmpty();
-     } 
- 
-      const listItem = createList(input.value);
-      const deleteButton = createBtnDelete(listItem); 
- 
-  
-      deleteButton.addEventListener("click", () => {
-          deleteTask(listItem); 
-      });
+      isEmpty();
+    
+      if(input.value !== ''){
+        const listItem = createList(input.value);
+        const deleteButton = createBtnDelete(listItem); 
+   
+    
+        deleteButton.addEventListener("click", () => {
+            deleteTask(listItem); 
+        });
+    }
   }
 })
