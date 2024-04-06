@@ -48,7 +48,7 @@ function createBtnDelete(li){
     li.appendChild(btn);
     li.style.position = 'relative'
     btn.style.position="absolute";
-    btn.style.right = '5%';
+    btn.style.right = '8%';
     btn.style.top = '7%';
     btn.style.color = 'rgb(18, 149, 201)';
     btn.style.backgroundColor = 'transparent';
