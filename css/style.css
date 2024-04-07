@@ -3,16 +3,38 @@ body{
     margin:0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #f7f7f7;
+    
     overflow-x: hidden !important;
+}
+
+.gradient{
+    background: radial-gradient(50% 123.47% at 50% 50%, #00ff94 0%, #720059 100%),
+    linear-gradient(121.28deg, #669600 0%, #ff0000 100%),
+    linear-gradient(360deg, #0029ff 0%, #8fff00 100%),
+    radial-gradient(100% 164.72% at 100% 100%, #6100ff 0%, #00ff57 100%),
+    radial-gradient(100% 148.07% at 0% 0%, #fff500 0%, #51d500 100%);
+  background-blend-mode: screen, color-dodge, overlay, difference, normal;
+  position: absolute;
+  top:0%;
+  bottom:0%;
+  left:0%;
+  right:0%;
 }
 *{
     font-family: "Roboto Mono", monospace;
     font-weight: 400;
 }
+
+.withTasks{
+    background-color: white;
+    padding:1.2rem;
+}
+
+
 h1{
     font-size: max(2vw, 20px);
     padding-bottom:1.2rem;
+   
 }
 h2{
     margin-top:0%;
@@ -44,7 +66,7 @@ h2{
 input{
   height:1.8rem !important;
   padding-right:25vw;
-  
+  border:none;
 }
 
 
@@ -59,8 +81,8 @@ input{
 button{
     height: 2rem;
     border: none;
-    padding-left: 1.2rem;
-    padding-right: 1.2rem;
+    padding-left: 1.3rem;
+    padding-right: 1.3rem;
     background-color: rgb(18, 149, 201);
     font-weight: 700;
     text-transform:uppercase;
@@ -68,8 +90,16 @@ button{
     font-size: 1.4rem;
     margin-left: 5%;
     margin-top: 0%;
+  
 }
 
+.btn-task{
+    box-shadow: 1px 1px 15px rgb(122, 119, 119);
+    padding:1.03rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 li{
     list-style: none;
     border-bottom: 1px solid rgb(218, 215, 215);
@@ -85,6 +115,7 @@ ul{
     max-height: 20rem;
     margin-right: calc(100vw - 100%);
     width:38vw;
+    margin-left: -2%;
     overflow-y: auto;
     overflow-x: hidden;
 }
@@ -121,7 +152,7 @@ footer{
     left:0%;
     right:0%;
     text-align: center;
-    background-color: #0c0c0c;
+    background-color: #252323;
     color: #ffffff;
     font-size: .8rem;
 }
@@ -129,20 +160,21 @@ footer{
 @media screen and (max-width:500px){
    
 .withTasks{
-    width:40vw;
+    width:74vw;
     position: absolute;
-    top:10%;
-    left:-0%;
+    top:4%;
+    left:8%;
     transform: translateY(0);
     height: 31rem;   
 }
 
 li, ul{
-    width:82vw;
+    width:64vw;
+    
 }
 
 ul{
-    margin-left: -17%;
+    margin-left: -13%;
 }
 
 button{
@@ -160,9 +192,14 @@ button{
 }
 
 .inputArea{
-    margin-left: 1.5% ;
+    margin-left: -35% ;
 }
-
+input{
+    height:1.8rem !important;
+    padding-right:12vw !important;
+    border:none;
+    
+  }
 h1{
     padding-left:5% !important;
     width:500px;
@@ -170,20 +207,30 @@ h1{
 
 footer{
     font-size: .6rem;
+    position: absolute;
+    bottom:0%;
 }
 
 li:first-child{
     margin-top: 11.5%; 
 }
+.tabs{
+    display: flex;
+    flex-direction: row;
+    gap:17%;
+    position:absolute;
+    left:-14.5%;
+    top:55% !important;
+}
 }
 
-@media  screen and (min-width:500px) and (max-width:700px) {
+@media  screen and (min-width:500px) and (max-width:670px) {
      
 .withTasks{
-    width:40vw;
+    width:55vw;
     position: absolute;
     top:10%;
-    left:30%;
+    left:50%;
     transform: translateX(-50%);
     height: 31rem;   
 }
@@ -192,8 +239,8 @@ li, ul{
     width:82vw;
 }
 
-ul{
-    margin-left: -5%;
+.inputArea{
+    margin-left: -30.5% ;
 }
 
 button{
@@ -210,9 +257,15 @@ button{
 
 }
 
-.inputArea{
-    margin-left: 5.5% ;
+.tabs{
+    display: flex;
+    flex-direction: row;
+    gap:17%;
+    position:absolute;
+    left:-11.5%;
+    top:55% !important;
 }
+
 
 h1{
     padding-left:8% !important;
@@ -221,7 +274,8 @@ h1{
 
 input{
     height:1.8rem !important;
-    padding-right:38vw !important;
+    padding-right:17vw !important;
+    border:none;
     
   }
   
@@ -230,19 +284,70 @@ input{
 }
 
 li{
-    width:24rem !important;
+    width:16rem !important;
 }
 
+ul{
+    margin-left: -13%;
+}
 
 }
 
-@media  screen and (min-width:700px) and (max-width:1200px) {
+@media screen and (min-width:600px) and (max-width:670px){
+    li:first-child{
+        margin-top: 6.5%; 
+    }
+    
+    .tabs{
+        display: flex;
+        flex-direction: row;
+        gap:17%;
+        position:absolute;
+        left:-13.5%;
+        top:55% !important;
+    }
+    
+    .inputArea{
+        margin-left: -34.5% ;
+    }
+    
+    h1{
+        margin-left: -32%;
+    }
+  
+}
+
+@media screen and (min-width:800px) and (max-width:1200px) {
+    li:first-child{
+        margin-top: 3% !important; 
+    }
+    
+    .tabs{
+        display: flex;
+        flex-direction: row;
+        gap:17%;
+        position:absolute;
+        left:3%;
+        top:55% !important;
+    }
+    
+    .inputArea{
+        margin-left: -34.5% ;
+    }
+    
+    h1{
+        margin-left: 1%;
+    }
+
+ 
+}
+@media  screen and (min-width:670px) and (max-width:1200px) {
      
 .withTasks{
     width:40vw;
     position: absolute;
     top:10%;
-    left:30%;
+    left:50%;
     transform: translateX(-50%);
     height: 31rem;   
 }
@@ -258,8 +363,8 @@ ul{
 button{
     height: 2rem;
     border: none;
-    padding-left: 3vw;
-    padding-right: 3vw;
+    padding-left: 2vw;
+    padding-right: 2vw;
     background-color: rgb(18, 149, 201);
     font-weight: 700;
     text-transform:uppercase;
@@ -280,7 +385,7 @@ h1{
 
 input{
     height:1.8rem !important;
-    padding-right:38vw !important;
+    padding-right:10vw !important;
     margin-left: -2%;;
   }
   
@@ -289,7 +394,7 @@ input{
 }
 
 li{
-    width:64vw !important;
+    width:30vw !important;
 }
 
 
@@ -304,4 +409,13 @@ li{
         transform: translateY(0);
         height: 31rem;   
     }
+}
+
+@media  screen and (max-width:1600px) {
+    input{
+        height:1.8rem !important;
+        padding-right:19vw;
+        border:none;
+      }
+      
 }
