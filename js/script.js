@@ -111,12 +111,14 @@ function createCheck(li){
             li.classList.add('completed');
             li.classList.remove('active')
             completeTasks.push(li);
+            activeTasks = activeTasks.filter(task => task !== li);
         } else {
             box.innerHTML = `<i class="fa-regular fa-square"></i>`;
             li.style.textDecoration = 'none';
             li.style.color = "#000";
+            li.classList.add("active");
             li.classList.remove('completed')
-            
+            completeTasks = completeTasks.filter(task => task !== li);
         }
 
 
