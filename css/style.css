@@ -1,18 +1,21 @@
+*{
+    font-family: "Roboto Mono", monospace;
+    font-weight: 400;
+}
 
 body{
     margin:0;
     padding: 0;
-    box-sizing: border-box;
-    
+    box-sizing: border-box;   
     overflow-x: hidden !important;
 }
 
 .gradient{
-    background: radial-gradient(50% 123.47% at 50% 50%, #00ff94 0%, #720059 100%),
-    linear-gradient(121.28deg, #669600 0%, #ff0000 100%),
-    linear-gradient(360deg, #0029ff 0%, #8fff00 100%),
-    radial-gradient(100% 164.72% at 100% 100%, #6100ff 0%, #00ff57 100%),
-    radial-gradient(100% 148.07% at 0% 0%, #fff500 0%, #51d500 100%);
+  background: radial-gradient(50% 123.47% at 50% 50%, #00ff94 0%, #720059 100%),
+  linear-gradient(121.28deg, #669600 0%, #ff0000 100%),
+  linear-gradient(360deg, #0029ff 0%, #8fff00 100%),
+  radial-gradient(100% 164.72% at 100% 100%, #6100ff 0%, #00ff57 100%),
+  radial-gradient(100% 148.07% at 0% 0%, #fff500 0%, #51d500 100%);
   background-blend-mode: screen, color-dodge, overlay, difference, normal;
   position: absolute;
   top:0%;
@@ -20,37 +23,30 @@ body{
   left:0%;
   right:0%;
 }
-*{
-    font-family: "Roboto Mono", monospace;
-    font-weight: 400;
-}
 
 .withTasks{
     background-color: white;
     padding:1.2rem;
+    width:40vw;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -72%);
+    height: 31rem; 
 }
-
 
 h1{
     font-size: max(2vw, 20px);
     padding-bottom:1.2rem;
    
 }
-h2{
-    margin-top:0%;
-    padding:1.5rem;
-    background-color: #0c0c0c;
-    color:white;
-    font-size: 1rem;
-    
-}
+
 .all{
     margin-left: auto;
     margin-right: auto;
     width: 38vw;
     
 }
-
 
 .container{
     padding:1rem;
@@ -62,6 +58,12 @@ h2{
     position: relative;
 }
 
+.inputArea{
+    display: flex;
+    flex-direction: row;
+   width:380px;
+   margin-top: -10%;
+}
 
 input{
   height:1.8rem !important;
@@ -69,14 +71,15 @@ input{
   border:none;
 }
 
-
-
-.inputArea{
+.btn-task{
+    box-shadow: 1px 1px 15px rgb(122, 119, 119);
+    padding:1.03rem;
     display: flex;
-    flex-direction: row;
-   width:380px;
-   margin-top: -10%;
+    justify-content: center;
+    align-items: center;
 }
+
+
 
 button{
     height: 2rem;
@@ -91,42 +94,6 @@ button{
     margin-left: 5%;
     margin-top: 0%;
   
-}
-
-.btn-task{
-    box-shadow: 1px 1px 15px rgb(122, 119, 119);
-    padding:1.03rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-li{
-    list-style: none;
-    border-bottom: 1px solid rgb(218, 215, 215);
-    border-top: 1px solid rgb(218, 215, 215);
-    margin-bottom: 3%;
-    margin-top: 3.5%;
-    padding:.8rem;
-    width:35vw;
-}
-
-ul{
-    margin-top:3%;
-    max-height: 20rem;
-    margin-right: calc(100vw - 100%);
-    width:38vw;
-    margin-left: -2%;
-    overflow-y: auto;
-    overflow-x: hidden;
-}
-
-.withTasks{
-    width:40vw;
-    position: absolute;
-    top:50%;
-    left:50%;
-    transform: translate(-50%, -72%);
-    height: 31rem;   
 }
 
 .tabs{
@@ -146,6 +113,26 @@ ul{
     font-weight: 800; 
 }
 
+ul{
+    margin-top:3%;
+    max-height: 20rem;
+    margin-right: calc(100vw - 100%);
+    width:38vw;
+    margin-left: -2%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+li{
+    list-style: none;
+    border-bottom: 1px solid rgb(218, 215, 215);
+    border-top: 1px solid rgb(218, 215, 215);
+    margin-bottom: 3%;
+    margin-top: 3.5%;
+    padding:.8rem;
+    width:35vw;
+}
+
 footer{
     position:absolute;
     bottom:0%;
@@ -157,164 +144,70 @@ footer{
     font-size: .8rem;
 }
 
-@media screen and (max-width:500px){
-   
-.withTasks{
-    width:74vw;
-    position: absolute;
-    top:4%;
-    left:8%;
-    transform: translateY(0);
-    height: 31rem;   
-}
+@media screen and (max-width:500px){  
+        .withTasks{
+            width:74vw;
+            position: absolute;
+            top:4%;
+            left:8%;
+            transform: translateY(0);
+            height: 31rem;   
+        }
 
-li, ul{
-    width:64vw;
-    
-}
+        li, ul{
+            width:64vw;
+            
+        }
 
-ul{
-    margin-left: -13%;
-}
+        ul{
+            margin-left: -13%;
+        }
 
-button{
-    height: 2rem;
-    border: none;
-    padding-left: 3vw;
-    padding-right: 3vw;
-    background-color: rgb(18, 149, 201);
-    font-weight: 700;
-    text-transform:uppercase;
-    color:white;
-    font-size: 1.2rem;
-    margin-left: 0%;
+        button{
+            height: 2rem;
+            border: none;
+            padding-left: 3vw;
+            padding-right: 3vw;
+            background-color: rgb(18, 149, 201);
+            font-weight: 700;
+            text-transform:uppercase;
+            color:white;
+            font-size: 1.2rem;
+            margin-left: 0%;
 
-}
+        }
 
-.inputArea{
-    margin-left: -35% ;
-}
-input{
-    height:1.8rem !important;
-    padding-right:12vw !important;
-    border:none;
-    
-  }
-h1{
-    padding-left:5% !important;
-    width:500px;
-}
+        .inputArea{
+            margin-left: -35% ;
+        }
+        input{
+            height:1.8rem !important;
+            padding-right:12vw !important;
+            border:none;
+            
+        }
+        h1{
+            padding-left:5% !important;
+            width:500px;
+        }
 
-footer{
-    font-size: .6rem;
-    position: absolute;
-    bottom:0%;
-}
+        footer{
+            font-size: .6rem;
+            position: absolute;
+            bottom:0%;
+        }
 
-li:first-child{
-    margin-top: 11.5%; 
-}
-.tabs{
-    display: flex;
-    flex-direction: row;
-    gap:17%;
-    position:absolute;
-    left:-14.5%;
-    top:55% !important;
-}
-}
-
-@media  screen and (min-width:500px) and (max-width:670px) {
-     
-.withTasks{
-    width:55vw;
-    position: absolute;
-    top:10%;
-    left:50%;
-    transform: translateX(-50%);
-    height: 31rem;   
-}
-
-li, ul{
-    width:82vw;
-}
-
-.inputArea{
-    margin-left: -30.5% ;
-}
-
-button{
-    height: 2rem;
-    border: none;
-    padding-left: 3vw;
-    padding-right: 3vw;
-    background-color: rgb(18, 149, 201);
-    font-weight: 700;
-    text-transform:uppercase;
-    color:white;
-    font-size: 1.2rem;
-    margin-left: 0%;
-
-}
-
-.tabs{
-    display: flex;
-    flex-direction: row;
-    gap:17%;
-    position:absolute;
-    left:-11.5%;
-    top:55% !important;
-}
-
-
-h1{
-    padding-left:8% !important;
-    width:500px;
-} 
-
-input{
-    height:1.8rem !important;
-    padding-right:17vw !important;
-    border:none;
-    
-  }
-  
-  li:first-child{
-    margin-top: 11.5%; 
-}
-
-li{
-    width:16rem !important;
-}
-
-ul{
-    margin-left: -13%;
-}
-
-}
-
-@media screen and (min-width:600px) and (max-width:670px){
-    li:first-child{
-        margin-top: 6.5%; 
-    }
-    
-    .tabs{
-        display: flex;
-        flex-direction: row;
-        gap:17%;
-        position:absolute;
-        left:-13.5%;
-        top:55% !important;
-    }
-    
-    .inputArea{
-        margin-left: -34.5% ;
-    }
-    
-    h1{
-        margin-left: -32%;
-    }
-  
+        li:first-child{
+            margin-top: 11.5%; 
+        }
+        .tabs{
+            display: flex;
+            flex-direction: row;
+            gap:17%;
+            position:absolute;
+            left:-14.5%;
+            top:55% !important;
+        }
 }
 
 @media screen and (min-width:800px) and (max-width:1200px) {
@@ -343,61 +236,95 @@ ul{
 }
 @media  screen and (min-width:670px) and (max-width:1200px) {
      
-.withTasks{
-    width:40vw;
-    position: absolute;
-    top:10%;
-    left:50%;
-    transform: translateX(-50%);
-    height: 31rem;   
+        .withTasks{
+            width:40vw;
+            position: absolute;
+            top:10%;
+            left:50%;
+            transform: translateX(-50%);
+            height: 31rem;   
+        }
+
+        li, ul{
+            width:82vw;
+        }
+
+        ul{
+            margin-left: -5%;
+        }
+
+        button{
+            height: 2rem;
+            border: none;
+            padding-left: 2vw;
+            padding-right: 2vw;
+            background-color: rgb(18, 149, 201);
+            font-weight: 700;
+            text-transform:uppercase;
+            color:white;
+            font-size: 1.2rem;
+            margin-left: 0%;
+
+        }
+
+        .inputArea{
+            margin-left: 5.5% ;
+        }
+
+        h1{
+            padding-left:1% !important;
+            width:500px;
+        } 
+
+        input{
+            height:1.8rem !important;
+            padding-right:10vw !important;
+            margin-left: -2%;;
+        }
+        
+        li:first-child{
+            margin-top: 7.5%; 
+        }
+
+        li{
+            width:30vw !important;
+        }
+
+
 }
 
-li, ul{
-    width:82vw;
+
+@media  screen and (max-width:1600px) {
+    input{
+        height:1.8rem !important;
+        padding-right:19vw;
+        border:none;
+      }
+      
 }
 
-ul{
-    margin-left: -5%;
-}
+/*====================Small extension=========================*/
+@media screen and (min-width:200px) and (max-width:300px) and (max-height:650px){
+    .withTasks{
+        width:65vw !important;
+        top:5% !important;
+        left:5% !important;
+        height: 24rem !important;   
+        padding:2.4rem !important;
+    }
 
-button{
-    height: 2rem;
-    border: none;
-    padding-left: 2vw;
-    padding-right: 2vw;
-    background-color: rgb(18, 149, 201);
-    font-weight: 700;
-    text-transform:uppercase;
-    color:white;
-    font-size: 1.2rem;
-    margin-left: 0%;
+    input{
+        height:1.8rem !important;
+        padding-right:5vw !important;
+        border:none;
+        margin-left: -2% !important;
+      }
 
-}
-
-.inputArea{
-    margin-left: 5.5% ;
-}
-
-h1{
-    padding-left:1% !important;
-    width:500px;
-} 
-
-input{
-    height:1.8rem !important;
-    padding-right:10vw !important;
-    margin-left: -2%;;
-  }
-  
-  li:first-child{
-    margin-top: 7.5%; 
-}
-
-li{
-    width:30vw !important;
-}
-
-
+      ul{
+        margin-left: -30%;
+        margin-top: 12% !important;
+        width:76vw;
+      }
 }
 
 @media screen and (min-width:300px) and (max-width:400px) and (max-height:640px){
@@ -411,6 +338,101 @@ li{
         padding:2.2rem !important;
     }
 }
+
+@media  screen and (min-width:500px) and (max-width:670px) {
+            
+    .withTasks{
+        width:55vw;
+        position: absolute;
+        top:10%;
+        left:50%;
+        transform: translateX(-50%);
+        height: 31rem;   
+    }
+
+    li, ul{
+        width:82vw;
+    }
+
+    .inputArea{
+        margin-left: -30.5% ;
+    }
+
+    button{
+        height: 2rem;
+        border: none;
+        padding-left: 3vw;
+        padding-right: 3vw;
+        background-color: rgb(18, 149, 201);
+        font-weight: 700;
+        text-transform:uppercase;
+        color:white;
+        font-size: 1.2rem;
+        margin-left: 0%;
+
+    }
+
+    .tabs{
+        display: flex;
+        flex-direction: row;
+        gap:17%;
+        position:absolute;
+        left:-11.5%;
+        top:55% !important;
+    }
+
+
+    h1{
+        padding-left:8% !important;
+        width:500px;
+    } 
+
+    input{
+        height:1.8rem !important;
+        padding-right:17vw !important;
+        border:none;
+        
+    }
+    
+    li:first-child{
+        margin-top: 11.5%; 
+    }
+
+    li{
+        width:16rem !important;
+    }
+
+    ul{
+        margin-left: -13%;
+    }
+
+}
+
+@media screen and (min-width:600px) and (max-width:670px){
+        li:first-child{
+            margin-top: 6.5%; 
+        }
+
+        .tabs{
+            display: flex;
+            flex-direction: row;
+            gap:17%;
+            position:absolute;
+            left:-13.5%;
+            top:55% !important;
+        }
+
+        .inputArea{
+            margin-left: -34.5% ;
+        }
+
+        h1{
+            margin-left: -32%;
+        }
+
+}
+
+/*=========height===========*/
 @media screen and (max-height: 801px){
     .withTasks{
         width:40vw;
@@ -420,13 +442,4 @@ li{
         transform: translateY(0);
         height: 31rem;   
     }
-}
-
-@media  screen and (max-width:1600px) {
-    input{
-        height:1.8rem !important;
-        padding-right:19vw;
-        border:none;
-      }
-      
 }

@@ -4,6 +4,8 @@ const input = document.querySelector(".input");
 const all = document.querySelector(".geral");
 const ul = document.querySelector("ul");
 
+
+//=========VALIDATION============
 function createPValid(){
        const p = document.createElement('p');
        return p;   
@@ -30,6 +32,8 @@ function isEmpty(){
   
 }
 
+
+//=========LIST OF TASKS============
 function createLi(){
     const li = document.createElement('li');
     
@@ -50,6 +54,9 @@ function createList(inputTxt){
    return li;
 }
 
+
+
+//=========DELETE BTN============
 function createBtnDelete(li){
     const btn = document.createElement('button');
     btn.innerHTML = `<i class="fa-sharp fa-solid fa-trash"></i>`;
@@ -80,6 +87,8 @@ function deleteTask(li){
  updateDisplay(allTasks);
 }
 
+
+//=========CHECKBOX + PUSHING ITEMS INTO THE ARRAYS(completeTasks and activeTasks)============
 let completeTasks = [];
 let activeTasks = [];
 function createCheck(li){
@@ -118,6 +127,9 @@ function createCheck(li){
     return box;
 }
 
+
+
+//=========btnTask click event + PUSHING ITEMS INTO THE ARRAY(allTasks)============
 let allTasks = [];
 let listItem = '';
 btnTask.addEventListener("click", () => {
@@ -143,6 +155,7 @@ let isChecked = false;
 
 
 
+//=========ENTERING TASK BY TYPING ENTER============
 input.addEventListener("keypress", (e) => {
   if(e.keyCode === 13){
       isEmpty();
@@ -164,6 +177,8 @@ input.addEventListener("keypress", (e) => {
   }
 })
 
+
+//=========ADDING TABS FUNCTIONALITIES============
 const activeTab = document.querySelector(".activeTab");
 const allTab = document.querySelector(".allTab");
 const completedTab = document.querySelector(".completedTab");
