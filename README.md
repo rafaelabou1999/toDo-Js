@@ -7,5 +7,6 @@
 - [x] Input is cleared automatically after entering a task
 - [x] Tabs - All, Active, Complete 
 
-![image](https://github.com/rafaelabou1999/toDo-Js/assets/120579642/32feeac9-bc7f-4b0d-8831-2c4ea8edac87)
+![image](https://github.com/rafaelabou1999/toDo-Js/assets/120579642/6f7a136a-6f4d-4538-a7ec-123275d0b7e6)
+
 ![image](https://github.com/rafaelabou1999/toDo-Js/assets/120579642/7796d1c8-7a9a-4507-b1f7-331ef1fd00ae)
