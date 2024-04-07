@@ -3,6 +3,7 @@ body{
     margin:0;
     padding: 0;
     box-sizing: border-box;
+    background-color: #f7f7f7;
 }
 *{
     font-family: "Roboto Mono", monospace;
@@ -29,8 +30,6 @@ h2{
 
 
 .container{
-    background-color: #ffffff;
-    
     padding:1rem;
     width:360px;
     display: flex;
@@ -150,6 +149,9 @@ h1{
     width:500px;
 }
 
+footer{
+    font-size: .6rem;
+}
 }
 
 @media  screen and (min-width:500px) and (max-width:770px) {

@@ -88,7 +88,7 @@ function createCheck(li){
     box.style.marginRight = "3%";
     li.insertBefore(box, li.firstChild);
     box.style.color = 'rgb(18, 149, 201)';
-    
+
     box.addEventListener("click", () => {
         box.innerHTML = `<i class="fa-solid fa-square-check"></i>`;
         box.style.color = 'rgb(18, 149, 201)';
@@ -97,9 +97,11 @@ function createCheck(li){
         if (!isChecked) {
             box.innerHTML = `<i class="fa-solid fa-square-check"></i>`;
             li.style.textDecoration = 'line-through';
+            li.style.color = "#808080";
         } else {
             box.innerHTML = `<i class="fa-regular fa-square"></i>`;
             li.style.textDecoration = 'none';
+            li.style.color = "#000";
         }
 
 
