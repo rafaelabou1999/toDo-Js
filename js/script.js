@@ -38,7 +38,10 @@ function createLi(){
 function createList(inputTxt){
    const li = document.createElement('li');
    li.textContent = inputTxt;
+   li.style.display = "flex";
+   li.style.flexDirection = 'row';
    ul.appendChild(li);
+   createCheck(li);
    return li;
 }
 
@@ -75,7 +78,35 @@ btnTask.addEventListener("click", () => {
         });
     }
     
+    createCheck(input.value);
 })
+
+let isChecked = false;
+function createCheck(li){
+    const box = document.createElement('div');
+    box.innerHTML = `<i class="fa-regular fa-square"></i>`;
+    box.style.marginRight = "3%";
+    li.insertBefore(box, li.firstChild);
+    box.style.color = 'rgb(18, 149, 201)';
+    
+    box.addEventListener("click", () => {
+        box.innerHTML = `<i class="fa-solid fa-square-check"></i>`;
+        box.style.color = 'rgb(18, 149, 201)';
+        li.style.textDecoration = 'line-through';
+
+        if (!isChecked) {
+            box.innerHTML = `<i class="fa-solid fa-square-check"></i>`;
+            li.style.textDecoration = 'line-through';
+        } else {
+            box.innerHTML = `<i class="fa-regular fa-square"></i>`;
+            li.style.textDecoration = 'none';
+        }
+
+
+        isChecked = !isChecked;
+    })
+    return box;
+}
 
 input.addEventListener("keypress", (e) => {
   if(e.keyCode === 13){
@@ -90,5 +121,8 @@ input.addEventListener("keypress", (e) => {
             deleteTask(listItem); 
         });
     }
+
+    createCheck(input.value);
   }
 })
+
