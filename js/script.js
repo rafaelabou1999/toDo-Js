@@ -50,7 +50,7 @@ function createList(inputTxt){
    createCheck(li);
    li.classList.add('active');
    allTasks.push(li);
-
+   saveList();
    return li;
 }
 
@@ -80,8 +80,10 @@ function deleteTask(li){
 
  if(li.classList.contains("completed")){
     completeTasks = completeTasks.filter(task => parseInt(task.getAttribute('data-task-id')) !== taskId);
+    saveList();
  } else{
     activeTasks = activeTasks.filter(task => parseInt(task.getAttribute('data-task-id')) !== taskId);
+    saveList();
  }
  allTasks = allTasks.filter(task => parseInt(task.getAttribute('data-task-id')) !== taskId);
  updateDisplay(allTasks);
@@ -112,6 +114,7 @@ function createCheck(li){
             li.classList.remove('active')
             completeTasks.push(li);
             activeTasks = activeTasks.filter(task => task !== li);
+            saveList();
         } else {
             box.innerHTML = `<i class="fa-regular fa-square"></i>`;
             li.style.textDecoration = 'none';
@@ -119,6 +122,7 @@ function createCheck(li){
             li.classList.add("active");
             li.classList.remove('completed')
             completeTasks = completeTasks.filter(task => task !== li);
+            saveList();
         }
 
 
@@ -214,3 +218,47 @@ activeTab.addEventListener("click", () => {
     const newArray = allTasks.filter(item => item.classList.contains('active'));
     updateDisplay(newArray);
 })
+
+
+//=========SAVING THE LIST============
+function saveList(){
+    let taskArray = [];
+
+    for(let task of allTasks){
+        let taskObject = {
+            text: task.innerText,
+            completed: task.classList.contains('completed')
+        }
+        taskArray.push(taskObject);
+    }
+    
+    let taskJSON = JSON.stringify(taskArray);
+    localStorage.setItem('tasks', taskJSON);
+}
+
+function addingSavedTasks(){
+    let tasks = localStorage.getItem('tasks');
+    const tasksList = JSON.parse(tasks);
+
+    for (let taskData of tasksList) {
+        const listItem = createList(taskData.text);
+        if (taskData.completed) {
+            listItem.style.textDecoration = 'line-through';
+            listItem.style.color = "#808080";
+            listItem.classList.add('completed');
+            listItem.classList.remove('active');
+            completeTasks.push(listItem);
+        } else{
+            activeTasks.push(listItem);
+        }
+        const deleteButton = createBtnDelete(listItem);
+
+        deleteButton.addEventListener("click", () => {
+            deleteTask(listItem);
+        });
+    }
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    addingSavedTasks();
+});
