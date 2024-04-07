@@ -1,4 +1,4 @@
-#### ToDo List
+# ToDo List
 
 ⚙️ Functionalities
 - [x] Adding task by clicking on the button or typing enter
