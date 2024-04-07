@@ -4,6 +4,7 @@ body{
     padding: 0;
     box-sizing: border-box;
     background-color: #f7f7f7;
+    
 }
 *{
     font-family: "Roboto Mono", monospace;
@@ -74,6 +75,7 @@ li{
     border-bottom: 1px solid rgb(218, 215, 215);
     border-top: 1px solid rgb(218, 215, 215);
     margin-bottom: 3%;
+    margin-top: 3.5%;
     padding:.8rem;
     width:35vw;
 }

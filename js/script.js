@@ -168,11 +168,13 @@ const activeTab = document.querySelector(".activeTab");
 const allTab = document.querySelector(".allTab");
 const completedTab = document.querySelector(".completedTab");
 const isActiveTab = false;
-
+allTab.style.color = 'rgb(18, 149, 201)';
 function updateDisplay(tasks){
     ul.innerHTML = '';
+   
     tasks.forEach(task => {
         ul.appendChild(task);
+        
     })
 }
 
