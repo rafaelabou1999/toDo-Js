@@ -4,7 +4,7 @@ body{
     padding: 0;
     box-sizing: border-box;
     background-color: #f7f7f7;
-    
+    overflow-x: hidden !important;
 }
 *{
     font-family: "Roboto Mono", monospace;
