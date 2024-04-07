@@ -76,6 +76,7 @@ btnTask.addEventListener("click", () => {
         deleteButton.addEventListener("click", () => {
             deleteTask(listItem); 
         });
+        input.value = '';
     }
     
     createCheck(input.value);
@@ -122,6 +123,8 @@ input.addEventListener("keypress", (e) => {
         deleteButton.addEventListener("click", () => {
             deleteTask(listItem); 
         });
+
+        input.value = '';
     }
 
     createCheck(input.value);
