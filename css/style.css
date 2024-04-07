@@ -36,7 +36,7 @@ h2{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
+    position: relative;
 }
 
 
@@ -94,6 +94,23 @@ ul{
     left:50%;
     transform: translate(-50%, -72%);
     height: 31rem;   
+}
+
+.tabs{
+    display: flex;
+    flex-direction: row;
+    gap:17%;
+    position:absolute;
+    left:3%;
+    top:55% !important;
+}
+
+.tabs h4{
+    padding-bottom:.6rem;
+    color:#808080;
+    text-transform: uppercase;
+    font-size: .8rem;
+    font-weight: 800; 
 }
 
 footer{
