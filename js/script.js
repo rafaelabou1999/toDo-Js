@@ -65,7 +65,7 @@ function deleteTask(li){
 btnTask.addEventListener("click", () => {
     isEmpty();
     
-    if(input.value !== ''){
+    if(input.value.trim() !== ''){
         const listItem = createList(input.value);
         const deleteButton = createBtnDelete(listItem); 
    
@@ -81,7 +81,7 @@ input.addEventListener("keypress", (e) => {
   if(e.keyCode === 13){
       isEmpty();
     
-      if(input.value !== ''){
+      if(input.value.trim() !== ''){
         const listItem = createList(input.value);
         const deleteButton = createBtnDelete(listItem); 
    
